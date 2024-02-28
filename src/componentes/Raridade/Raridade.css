@@ -1,0 +1,13 @@
+.raridade{
+    background-color: #4359ff44;
+    text-align: center;
+    padding: 28px;
+}
+
+.raridade h3{
+    font-size: 32px;
+    color: #4359ff;
+    border-bottom: 4px solid #4359ff;
+    padding-bottom: 8px;
+    display: inline-block;
+}

@@ -15,6 +15,7 @@ export const Raridade = ({nome, cor1 ,cor2, cartas}) => {
                 key={carta.nome}
                 nome={carta.nome}
                 tipo={carta.tipo}
+                elixir={carta.elixir}
                 imagem={carta.imagem}
             />)}
             </div>

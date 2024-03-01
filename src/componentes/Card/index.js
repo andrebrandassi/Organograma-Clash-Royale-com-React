@@ -1,6 +1,6 @@
 import "./Card.css"
 
-export const Card = ({nome, tipo, imagem, corDoCabecalho}) => {
+export const Card = ({nome, tipo, elixir, imagem, corDoCabecalho}) => {
     return(
         <div className="card">
             <div className="cabecalho" style={{backgroundColor: corDoCabecalho}}>
@@ -8,7 +8,9 @@ export const Card = ({nome, tipo, imagem, corDoCabecalho}) => {
             </div>
             <div className="rodape">
                 <h4>{nome}</h4>
-                <h5>{tipo}</h5>
+                <h5>Custo em elixir: {elixir}</h5>
+                <h6>Tipo: {tipo}</h6>
+                
             </div>
         </div>
     )

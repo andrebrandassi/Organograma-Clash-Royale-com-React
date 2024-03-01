@@ -11,6 +11,7 @@ export const Formulario = (props) => {
   /* hooks para alteração do valor do estado dos inputs */
   const [nome, setNome] = useState("");
   const [tipo, settipo] = useState("");
+  const [elixir, setElixir] = useState("")
   const [imagem, setImagem] = useState("");
   const [rari, setRari] = useState("")
 
@@ -21,6 +22,9 @@ export const Formulario = (props) => {
   const handleChangeTipo = (event) => {
     settipo(event.target.value);
   };
+  const handleChangeElixir = (event) =>{
+    setElixir(event.target.value)
+  }
   const handleChangeImagem = (event) => {
     setImagem(event.target.value);
   };
@@ -34,11 +38,13 @@ export const Formulario = (props) => {
     props.cartaCadastrada({
       nome,
       tipo,
+      elixir,
       imagem,
       raridade:rari
     })
     setNome("")
     settipo("")
+    setElixir("")
     setImagem("")
     setRari("")
   };
@@ -63,6 +69,13 @@ export const Formulario = (props) => {
           placeholder="Digite o tipo de carta Ex: Aerea"
           valor={tipo}
           alterado={handleChangeTipo}
+        />
+        <CampoTexto
+          obrigatorio={true}
+          label="Elixir"
+          placeholder="Digite o custo em elixir"
+          valor={elixir}
+          alterado={handleChangeElixir}
         />
         <CampoTexto
           obrigatorio={true}

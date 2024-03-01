@@ -17,21 +17,29 @@
     background: #FFFFFF;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
     border-radius: 0px 0px 10px 10px;
-    padding-top: 90px;
-    padding-bottom: 40px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    height: 250px;
+    max-height: 250px;
 }
 
 .card .rodape h4 {
     color: #6278F7;
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 24px;
     font-weight: bold;
-    margin-bottom: 8px;
+    margin: 24px 0 0 0;
 }
 
 .card .rodape h5 {
-    font-size: 18px;
-    line-height: 22px;
-    color: #212121;
-    padding: 0 16px;
+    font-size: 24px;
+    color: #D121F1;
+    margin: 24px 0 0 0 ;
 }
+
+.card .rodape h6 {
+    font-size: 24px;
+    color: #212121;
+    margin: 24px 0 0 0 ;
+}
+
+

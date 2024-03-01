@@ -2,6 +2,8 @@
     display: block;
     margin-bottom: 8px;
     font-size: 24px;
+    color: white;
+    font-weight: 700;
 }
 
 .lista-suspensa select{
@@ -12,4 +14,5 @@
     font-size: 24px;
     padding: 24px;
     box-sizing: border-box;
+    border-radius: 8px;
 }

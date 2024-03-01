@@ -37,15 +37,15 @@ function App() {
 
   const novaCartaCadastrada = (carta) => {
     console.log(carta)
-    setCartas([cartas, carta])
+    setCartas([...cartas, carta])
   }
 
   return (
 
     <div className="App">
       <Banner/>
-      <Formulario cartaCadastrada={carta => novaCartaCadastrada(carta)}/>
-      {raridades.map(raridade => <Raridade key={raridade.nome} nome={raridade.nome} cor1={raridade.cor1} cor2={raridade.cor2}/>)}
+      <Formulario raridades={raridades.map(raridade => raridade.nome)} cartaCadastrada={carta => novaCartaCadastrada(carta)}/>
+      {raridades.map(raridade => <Raridade key={raridade.nome} nome={raridade.nome} cor1={raridade.cor1} cor2={raridade.cor2} cartas={cartas.filter(carta => carta.raridade === raridade.nome)}/>)}
     </div>
   );
 }

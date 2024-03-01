@@ -11,3 +11,10 @@
     padding-bottom: 8px;
     display: inline-block;
 }
+
+.raridade .cards{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px
+}

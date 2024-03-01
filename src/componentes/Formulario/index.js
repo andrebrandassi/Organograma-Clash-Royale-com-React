@@ -7,13 +7,12 @@ import { useState } from "react";
 /* Exportação do component Formulario */
 export const Formulario = (props) => {
   /* Lista de opções para o select */
-  const raridade = ["Comum", "Rara", "Épica", "Lendária", "Heróis"];
 
   /* hooks para alteração do valor do estado dos inputs */
   const [nome, setNome] = useState("");
   const [tipo, settipo] = useState("");
   const [imagem, setImagem] = useState("");
-  const [rari, setRari] = useState("Comum")
+  const [rari, setRari] = useState("")
 
   /* Função para chamar as alterações do valor do estado dos inputs */
   const handleChangeNome = (event) => {
@@ -36,8 +35,12 @@ export const Formulario = (props) => {
       nome,
       tipo,
       imagem,
-      rari
+      raridade:rari
     })
+    setNome("")
+    settipo("")
+    setImagem("")
+    setRari("")
   };
 
   /* JSX do Formulario */
@@ -45,7 +48,7 @@ export const Formulario = (props) => {
     <section className="formulario">
       {/* Abertura do formulario com evento onSubmit */}
       <form onSubmit={aoSalvar}>
-        <h2>Preencha os dados para adicionar uma carta</h2>
+        <h2>Adicione uma carta a coleção</h2>
         {/* Componentes do input */}
         <CampoTexto
           obrigatorio={true}
@@ -69,7 +72,7 @@ export const Formulario = (props) => {
           alterado={handleChangeImagem}
         />
         {/* Componente do select */}
-        <ListaSuspensa obrigatorio={true} label="Raridade" itens={raridade}
+        <ListaSuspensa obrigatorio={true} label="Raridade" itens={props.raridades}
            valor={rari}
            alterado={handleChangeRaridade}
         />

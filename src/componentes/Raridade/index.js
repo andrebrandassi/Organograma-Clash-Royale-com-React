@@ -1,24 +1,33 @@
-import { Card } from "../Card"
-import "./Raridade.css"
+import hexToRgba from 'hex-to-rgba';
+import { Card } from "../Card";
+import "./Raridade.css";
 
-export const Raridade = ({nome, cor1 ,cor2, cartas}) => {
-
-    const mainColor  = {color : cor1, borderColor: cor1}
-    const background = {backgroundColor:cor2}
-
-    return(
-       cartas.length > 0 && <section className="raridade" style={background}>
-            <h3 style={mainColor}>{nome}</h3>
-            <div className="cards">
-            {cartas.map(carta => <Card 
-                corDoCabecalho={cor1}     
-                key={carta.nome}
-                nome={carta.nome}
-                tipo={carta.tipo}
-                elixir={carta.elixir}
-                imagem={carta.imagem}
-            />)}
-            </div>
-        </section>
+export const Raridade = ({ raridade, cartas, aoDeletar, mudaCor}) => {
+  const mainColor = { color: raridade.cor, borderColor: raridade.cor };
+  const background = {backgroundColor: hexToRgba(raridade.cor,'0.5')}
+  return (
+    cartas.length > 0 && (
+      <section className="raridade" style={background}>
+        <input
+          value={mainColor}
+          onChange={evento => mudaCor(evento.target.value, raridade.id)}
+          type="color"
+          className="input-color"
+        />
+        <h3 style={mainColor}>{raridade.nome}</h3>
+        <div className="cards">
+          {cartas.map((carta, index) => {
+            return (
+              <Card
+                key={index}
+                corDoCabecalho={raridade.cor}
+                card={carta}
+                aoDeletar={aoDeletar}
+              />
+            );
+          })}
+        </div>
+      </section>
     )
-}
+  );
+};

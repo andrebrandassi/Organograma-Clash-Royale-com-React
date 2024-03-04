@@ -3,6 +3,7 @@ import CampoTexto from "../CampoTexto";
 import { ListaSuspensa } from "../ListaSuspensa";
 import { Botao } from "../Botao";
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 /* Exportação do component Formulario */
 export const Formulario = (props) => {
   /* Lista de opções para o select */
@@ -34,19 +35,22 @@ export const Formulario = (props) => {
   /* Função do envento onSubmit para envio do formulario */
   const aoSalvar = (e) => {
     e.preventDefault();
-    props.cartaCadastrada({
+    const novaCarta = {
+      id: uuidv4(),
       nome,
       tipo,
       elixir,
       imagem,
-      raridade:rari
-    })
-    setNome("")
-    settipo("")
-    setElixir("")
-    setImagem("")
-    setRari("")
+      raridade: rari,
+    };
+    props.cartaCadastrada(novaCarta);
+    setNome("");
+    settipo("");
+    setElixir("");
+    setImagem("");
+    setRari("");
   };
+  
   /* JSX do Formulario */
   return (
     <section className="formulario">

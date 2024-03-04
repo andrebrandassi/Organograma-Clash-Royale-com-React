@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Banner from './componentes/Banner';
 import { Formulario } from './componentes/Formulario';
 import { Raridade } from './componentes/Raridade';
 import { Footer } from './componentes/Footer';
+import {Esconder} from './componentes/Esconder'
 
 function App() {
 
@@ -28,24 +29,30 @@ function App() {
       cor2: "#8CE4FF66",
     },
     {
-      nome: "Campeões",
+      nome: "Campeão",
       cor1: "#F0D52B",
       cor2: "#F0D52B66",
     }
   ]
 
   const [cartas,setCartas]  = useState([])
+  const [mostrarForm, setMostrarForm] = useState(true)
 
+  
   const novaCartaCadastrada = (carta) => {
     console.log(carta)
     setCartas([...cartas, carta])
   }
 
+  const toggleForm = () =>{
+    setMostrarForm(!mostrarForm)
+  }
   return (
 
     <div className="App">
       <Banner/>
-      <Formulario raridades={raridades.map(raridade => raridade.nome)} cartaCadastrada={carta => novaCartaCadastrada(carta)}/>
+      {mostrarForm ? <Formulario raridades={raridades.map(raridade => raridade.nome)} cartaCadastrada={carta => novaCartaCadastrada(carta)}/> : ""}
+      <Esconder esconder={toggleForm}/>
       {raridades.map(raridade => <Raridade key={raridade.nome} nome={raridade.nome} cor1={raridade.cor1} cor2={raridade.cor2} cartas={cartas.filter(carta => carta.raridade === raridade.nome)}/>)}
       <Footer/>
     </div>

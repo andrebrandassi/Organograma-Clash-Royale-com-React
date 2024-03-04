@@ -3,7 +3,6 @@ import CampoTexto from "../CampoTexto";
 import { ListaSuspensa } from "../ListaSuspensa";
 import { Botao } from "../Botao";
 import { useState } from "react";
-
 /* Exportação do component Formulario */
 export const Formulario = (props) => {
   /* Lista de opções para o select */
@@ -48,7 +47,6 @@ export const Formulario = (props) => {
     setImagem("")
     setRari("")
   };
-
   /* JSX do Formulario */
   return (
     <section className="formulario">

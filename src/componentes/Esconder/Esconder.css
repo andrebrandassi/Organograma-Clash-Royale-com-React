@@ -1,0 +1,23 @@
+.btn-mostrar{
+    text-align: center;
+}
+
+.btn-mostrar h3{
+    display: inline-block;
+    padding: 10px;
+    font-size: 4rem;
+    color: #ccc;
+}
+
+.menu-toggle{
+    display: inline;
+    margin-left: 100px;
+}
+
+.menu-toggle button{
+    border: none;
+    font-size: 4rem;
+    color: #6278F7;
+    padding: 10px;
+    background-color: transparent;
+}

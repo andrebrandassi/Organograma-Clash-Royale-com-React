@@ -1,5 +1,7 @@
 .card {
-    width: 280px;
+    width: 450px;
+    position: relative;
+    padding-bottom: 50px;
 }
 
 .card .cabecalho {
@@ -7,8 +9,8 @@
     border-radius: 10px 10px 0px 0px;
 }
 .card img {
-    width: 100px;
-    border-radius: 50%;
+    width: 150px;
+    border-radius: 0;
     position: relative;
     bottom: -50px;
 }
@@ -42,4 +44,9 @@
     margin: 24px 0 0 0 ;
 }
 
-
+.deletar{
+    position: absolute;
+    top: -20px;
+    right: -25px;
+    cursor: pointer;
+}

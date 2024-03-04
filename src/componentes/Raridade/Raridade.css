@@ -1,7 +1,7 @@
 .raridade{
-    background-color: #4359ff44;
     text-align: center;
     padding: 28px;
+    position: relative;
 }
 
 .raridade h3{
@@ -17,4 +17,10 @@
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 30px
+}
+
+.input-color{
+    position: absolute;
+    top: 20px;
+    right: 50px;
 }

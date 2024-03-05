@@ -114,7 +114,3 @@ function App() {
 }
 
 export default App;
-
-// criar local para armazenar lista de cartas
-// fazer o formulario ouvir o evento de cadastrar as cartas
-// e armazenar os cadatros fora do formulario (app)
